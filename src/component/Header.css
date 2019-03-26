@@ -1,0 +1,161 @@
+.header{
+    position: fixed;
+    @media(--desktop){
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        padding: 48px 80px;
+        background-color: var(--grey);
+        max-width: 1760px;
+        margin: auto;
+    } 
+    & .container{
+        position: relative;
+        width: 100vw;
+        height: 98px;
+        z-index: 10;
+        padding: 24px 40px;
+        background-color: var(--grey);
+        @media(--pad){
+            height: 80px;
+            padding: 48px 80px;
+        }
+        @media(--desktop){
+            width: 70px;
+            height: auto;
+            padding: 0;
+        }
+        & .logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            & img{
+                width: 50px;
+                @media(--pad){
+                    width: 60px;
+                }
+                @media(--desktop-w){
+                    width: 70px;
+                }
+            }
+        }
+        & .hamburger{
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            background-color: black;
+            position: relative;
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translate(0%, -50%);
+            cursor: pointer;
+            @media(--pad){
+                right: 80px;
+            }
+            @media(--desktop){
+                display: none;
+            }
+            & span{
+                width: 20px;
+                height: 2px;
+                background-color: white;
+                display: block;
+                position: relative;
+                top: 9px;
+                 transition: .5s;
+                &:before, &:after{
+                    content: '';
+                    width: 20px;
+                    height: 2px;
+                    background-color: white;
+                    display: block;
+                    position: relative;
+                     transition: .5s;
+                }
+                &:before{
+                    top: -9px;
+                }
+                &:after{
+                    top: 7px;
+                }
+            }  
+        }
+        & .hamburger.visible{
+            & span{
+                width: 0;
+                &:before{
+                    transform: rotate(45deg);
+                    transition: .5s;
+                    transform-origin: left;
+                    width: 28px;
+                }
+                &:after{
+                    transform: rotate(-45deg);
+                    transition: .5s;
+                    transform-origin: left;
+                    width: 28px;
+                }
+            }
+        }
+    }
+    
+    & .menu{
+        list-style: none; 
+        background-color: var(--grey);
+        width: 100vw;
+        height: 100vh;
+        padding: 0 30px;
+        position: relative;
+        top: -90px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-200%);
+        opacity: 0;
+        transition: .5s;
+        @media(--pad){
+            height: 200px;
+            top: 0;
+        }
+        @media(--desktop){
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+            height: auto;
+            width: auto;
+            left: 0;
+            padding: 0;
+            background-color: transparent;
+            opacity: 1;
+            transform: translateY(0%);
+        }    
+        & li{
+            font-size: 24px;
+            line-height: 56px;
+            color: var(--black);
+            @media(--desktop){
+                font-size: 1em;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    & .menu.visible{
+        transform: translateY(0%);
+        transition: .5s;
+        opacity: 1;
+    }
+}

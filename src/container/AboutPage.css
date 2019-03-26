@@ -1,0 +1,43 @@
+section.about_page{
+	@media(--pad){
+		width: calc(100vw - 160px);
+		max-width: 674px;
+	}
+	@media(--desktop){
+		width: 600px;
+		margin: auto;
+	}
+	& .illustraion{
+		margin-bottom: 24px;
+		@media(--desktop){
+			margin-bottom: 80px;
+		}
+		& p{
+			font-size: 14px;
+			line-height: 20px;
+			color: var(--black);
+			@media(--desktop){
+				font-size: 16px;
+			    line-height: 24px;
+			    letter-spacing: 1px;
+			}
+		}
+	}
+	& .contact{
+		& .content{
+			& h1, & span{
+				font-family: 'Open Sans', sans-serif;
+				color: var(--black);
+				font-size: 14px;
+				line-height: 20px;
+				@media(--desktop){
+					font-size: 16px;
+				    line-height: 24px;
+				}
+			}
+			& h1{
+				margin: 0;
+			}
+		}
+	}
+}
